@@ -8,18 +8,18 @@ on:
 
 jobs:
 
-  build:
+  docker:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag web:$(date +%s)
+      run: docker build . --file Dockerfile --tag web:$(git_hash)
     - name: Deploy the docker image
       uses: elgohr/Publish-Docker-Github-Action@v4
       with:
-        name: web:$(date +%s)
+        name: web:$(git_hash)
         username: ${{ secrets.DO_TOKEN }}
         password: ${{ secrets.DO_REGISTRY_PASSWORD }}
         registry: registry.digitalocean.com/safeops-challenge
