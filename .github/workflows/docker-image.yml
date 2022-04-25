@@ -13,13 +13,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag web:${{ github.sha }}
     - name: Deploy the docker image
       uses: elgohr/Publish-Docker-Github-Action@v4
       with:
-        name: web:${{ github.sha }}
+        name: web
         username: ${{ secrets.DO_TOKEN }}
         password: ${{ secrets.DO_REGISTRY_PASSWORD }}
         registry: registry.digitalocean.com/safeops-challenge
+        dockerfile: Dockerfile
+        tags: ${{ github.sha }}, latest
         
