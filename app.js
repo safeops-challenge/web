@@ -8,9 +8,6 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 
 var app = express();
-var ENV = process.env.ENV || "dev";
-var URL = process.env.URL || "";
-var BASE_URL = `/${ENV}${URL}`
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
