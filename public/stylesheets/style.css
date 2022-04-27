@@ -1,7 +1,10 @@
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #157BF2;
+  background: #00402F;
 }
 
 a {

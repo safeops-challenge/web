@@ -1,5 +1,6 @@
 # Devops Web App
 
+![flujo de trabajo de ejemplo](https://github.com/safeops-challenge/web/actions/workflows/docker-image.yml/badge.svg)
 
 ### install the node packages for the web tier:
 ```sh
